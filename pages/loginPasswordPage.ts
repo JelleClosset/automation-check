@@ -3,8 +3,8 @@ import {HomePage} from "./homePage";
 
 export class LoginPasswordPage {
     readonly page: Page;
-    private passwordInput: Locator;
-    private continueButton: Locator;
+    readonly passwordInput: Locator;
+    readonly continueButton: Locator;
 
     constructor(page: Page) {
         this.page = page;

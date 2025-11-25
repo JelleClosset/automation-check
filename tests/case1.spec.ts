@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from "../pages/homePage";
 
+//test werkt niet door een probleem met de login op VTMGO
 test('Does login work properly', async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.navigateToHomePage();
