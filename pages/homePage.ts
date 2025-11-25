@@ -25,6 +25,8 @@ export class HomePage {
 
     async acceptPrivacyRules(): Promise<void> {
         await this.acceptPrivacyRulesButton.click();
+        // wait untill the message to accept the privacy rules is fully processed
+        await this.page.waitForLoadState('networkidle');
     }
 
     async navigateToLoginPage(): Promise<LoginEmailPage> {

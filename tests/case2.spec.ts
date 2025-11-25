@@ -14,8 +14,6 @@ movieLinks.forEach(link => {
         const homePage = new HomePage(page);
         await homePage.navigateToHomePage();
         await homePage.acceptPrivacyRules();
-        // wait untill the message to accept the privacy rules is fully processed
-        await page.waitForLoadState('networkidle');
         const moviePage = await homePage.goToMoviePage(link)
         // .soft to be sure both expects are always checked
         expect.soft(await moviePage.isWatchNowButtonVisible()).toBe(true);

@@ -5,8 +5,6 @@ test('Does searchfunction find Familie', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.navigateToHomePage();
     await homePage.acceptPrivacyRules();
-    // wait untill the message to accept the privacy rules is fully processed
-    await page.waitForLoadState('networkidle');
     const searchPage= await homePage.goToSearchPage();
     await searchPage.fillInSearchBar("Familie");
     await page.keyboard.press('Enter');
